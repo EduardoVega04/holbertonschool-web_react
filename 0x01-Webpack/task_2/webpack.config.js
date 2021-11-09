@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -9,9 +11,9 @@ module.exports = {
         port: 8564,
     },
     entry: {
-        header: path.resolve(__dirname, './modules/header/header.js'),
-        body: path.resolve(__dirname, './modules/body/body.js'),
-        footer: path.resolve(__dirname, './modules/footer/footer.js')
+        header: './modules/header/header.js',
+        body: './modules/body/body.js',
+        footer: './modules/footer/footer.js'
     },
     output: {
         filename: '[name].bundle.js',
