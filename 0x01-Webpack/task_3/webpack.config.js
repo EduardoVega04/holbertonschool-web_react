@@ -38,7 +38,7 @@ module.exports = {
             },
             { 
                 test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-                use: ["file-loader", "image-webpack-loader"]
+                type: ["file-loader", "image-webpack-loader"]
             }
         ]
     },
