@@ -34,8 +34,5 @@ module.exports = {
     },
     performance: {
         maxAssetSize: 1000000
-    },
-    optimization: {
-        runtimeChunk: 'single'
     }
 };
