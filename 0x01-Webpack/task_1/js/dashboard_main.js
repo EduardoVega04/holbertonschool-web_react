@@ -6,7 +6,7 @@ $(function () {
 
     $('body').append('<p>Holberton Dashboard</p>');
     $('body').append('<p>Dashboard data for the students</p>');
-    $('body').append('<button type="button">Click here to get started</button');
+    $('body').append('<button type="button">Click here to get started</button>');
     $('body').append(`<p id='count'></p>`);
     $('body').append('Copyright - Holberton School');
 
@@ -15,5 +15,5 @@ $(function () {
         $("#count").text(`${count} clicks on the button`);
     }
 
-    $("button").on("click", _.debounce(updateCounter, 250, {leading: true, trailing: false,}));
+    $("button").on("click", _.debounce(updateCounter, 250));
 });
