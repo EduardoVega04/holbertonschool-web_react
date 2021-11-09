@@ -16,7 +16,9 @@ module.exports = {
     },
     plugins: [new CleanWebpackPlugin(), new HtmlWebpackPlugin()],
     devServer: {
-        static: path.join(__dirname, './public'),
+        static: {
+            directory: path.join(__dirname, 'public')
+        },
         compress: true,
         port: 8564,
     },
