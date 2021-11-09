@@ -1,7 +1,6 @@
 import $ from "jquery";
 import _ from "lodash";
 import '../css/main.css';
-import '../assets/holberton-logo.jpg';
 
 $(function () {
     let count = 0;
