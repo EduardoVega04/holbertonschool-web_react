@@ -16,6 +16,5 @@ $(function () {
     $('body').append('<p>Dashboard data for the students</p>');
     $('body').append(my_button);
     $('body').append(`<p id='count'></p>`);
-    $("#count").text(`${count} clicks on the button`);
     $('body').append('<p>Copyright - Holberton School</p>');
 });
