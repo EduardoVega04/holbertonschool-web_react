@@ -1,0 +1,11 @@
+button {
+    max-width: 30%;
+}
+  
+#count {
+    display: inline;
+    padding: 0 10px 0 0;
+    font-weight: bold;
+    min-width: 20%;
+    max-width: 60%;
+}
