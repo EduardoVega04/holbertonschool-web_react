@@ -21,6 +21,7 @@ html, body, #root, .main-content {
 .main-content {
   display: flex;
   flex-flow: column nowrap;
+  margin-top: 20px;
 }
 
 .App-header {
