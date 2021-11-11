@@ -6,21 +6,28 @@ module.exports = {
     devtool: 'inline-source-map',
     entry: './src/index.js',
     output: {
-        path: path.resolve('./dist'),
         filename: 'bundle.js',
+        path: path.resolve(__dirname, './dist')
     },
     devServer: {
-        historyApiFallback: true, // to can use @reach/router without errors
+        historyApiFallback: true,
         hot: true,
         compress: true,
-        static: path.resolve('./dist'),
+        static: {
+            directory: path.join(__dirname, './dist')
+        }
     },
     module: {
         rules: [
         {
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,
-            loader: 'babel-loader',
+            use: {
+                loader: "babel-loader",
+                options: {
+                    presets: ['@babel/preset-env', '@babel/preset-react']
+                }
+            }
         },
         {
             test: /\.css$/,
@@ -33,8 +40,8 @@ module.exports = {
             {
                 loader: "image-webpack-loader",
                 options: {
-                bypassOnDebug: true, // webpack@1.x
-                disable: true, // webpack@2.x and newer
+                bypassOnDebug: true, 
+                disable: true, 
                 },
             },
             ],
@@ -43,8 +50,9 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-        template: path.resolve('./dist/index.html'),
-        filename: 'index.html'
+            filename: 'index.html',
+            template: './src/template.html',
+            favicon: "./src/favicon.ico"
         })
     ]
 };
