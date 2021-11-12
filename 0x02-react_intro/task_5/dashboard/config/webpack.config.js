@@ -7,7 +7,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, './dist')
+        path: path.resolve(__dirname, '../dist')
     },
     devServer: {
         historyApiFallback: true,
@@ -52,7 +52,7 @@ module.exports = {
         new HtmlWebPackPlugin({
             filename: 'index.html',
             template: './src/template.html',
-            favicon: "./src/favicon.ico"
+            favicon: "./dist/favicon.ico"
         })
     ]
 };
