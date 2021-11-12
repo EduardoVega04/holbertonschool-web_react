@@ -1,6 +1,8 @@
 // npm run test
 import { shallow } from 'enzyme';
+import '@testing-library/jest-dom'
 import Notifications from './Notifications';
+import React from 'react';
 
 describe('<Notifications />', () => {
     it('Renders without crashing', () => {

@@ -2,7 +2,6 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    mode: 'development',
     devtool: 'inline-source-map',
     entry: './src/index.js',
     output: {
@@ -54,5 +53,9 @@ module.exports = {
             template: './src/template.html',
             favicon: "./dist/favicon.ico"
         })
-    ]
+    ],
+    performance: {
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    }
 };

@@ -1,6 +1,8 @@
 // npm run test
 import { shallow } from 'enzyme';
+import '@testing-library/jest-dom'
 import App from './App';
+import React from 'react';
 
 describe('<App />', () => {
     it('Renders without crashing', () => {
