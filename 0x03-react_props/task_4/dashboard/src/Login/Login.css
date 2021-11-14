@@ -1,0 +1,13 @@
+.App-body {
+  margin-left: 35px;
+  margin-top: 25px;
+  font-size: 1.1em;
+}
+
+#email, #password {
+  margin-right: 20px;
+}
+
+label {
+  margin-right: 8px;
+}
