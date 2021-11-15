@@ -1,5 +1,6 @@
 import React from 'react';
 import CourseListRow from './CourseListRow';
+import './CourseList.css';
 
 export default function CourseList() {
     return (

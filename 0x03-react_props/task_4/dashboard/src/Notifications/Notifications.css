@@ -1,6 +1,14 @@
 .Notifications {
     border: 2px dotted #dd3e66;
     padding: 5px;
+    width: 40%;
+    position: absolute;
+    right: 15px;
+}
+
+.menuItem {
+    text-align: end;
+    margin-left: auto;
 }
 
 .Notifications p {
