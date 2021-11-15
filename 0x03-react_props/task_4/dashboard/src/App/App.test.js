@@ -44,11 +44,11 @@ describe('<App />', () => {
 describe('<App />', () => {
     it('Should not render the Login component when isLoggedIn is true', () => {
         const wrapper = shallow(<App isLoggedIn={true} />);
-        expect(wrapper.exists(<Login />)).toEqual(false);
+        expect(wrapper.find(Login).exists()).toEqual(false);
     });
 
     it('Should render the CourseList component when isLoggedIn is true', () => {
         const wrapper = shallow(<App isLoggedIn={true} />);
-        expect(wrapper.exists(<CourseList />)).toEqual(true);
+        expect(wrapper.find(CourseList).exists()).toEqual(true);
     });
 });

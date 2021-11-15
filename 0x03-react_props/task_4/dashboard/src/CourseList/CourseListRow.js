@@ -6,13 +6,13 @@ export default function CourseListRow({ isHeader, textFirstCell, textSecondCell 
     if (isHeader)
     {
         if (textSecondCell === null)
-            return <tr colSpan="2">{textFirstCell}</tr>;
+            return <tr><th colSpan="2">{textFirstCell}</th></tr>;
         else {
             return (
-                <React.Fragment>
-                    <tr>{textFirstCell}</tr>
-                    <tr>{textSecondCell}</tr>
-                </React.Fragment>
+                <tr>
+                    <th>{textFirstCell}</th>
+                    <th>{textSecondCell}</th>
+                </tr>
             )
         }
     }
