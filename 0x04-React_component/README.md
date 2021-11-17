@@ -1,0 +1,1 @@
+<strong>React component<strong>
