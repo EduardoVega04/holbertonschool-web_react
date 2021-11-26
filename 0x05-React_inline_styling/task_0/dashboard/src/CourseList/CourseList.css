@@ -1,0 +1,12 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead tr:nth-child(2) {
+    text-align: left;
+}
+
+table, thead th {
+    border: 1px solid lightgray;
+}
