@@ -1,0 +1,16 @@
+:root {
+  --hbt-color: #dd3e66;
+}
+
+.App-header {
+  display: flex;
+  align-items: center;
+  color: var(--hbt-color);
+  border-bottom: 3px solid var(--hbt-color);
+}
+
+.App-header img {
+  width: 200px;
+  height: 200px;
+  margin-right: 10px;
+}
