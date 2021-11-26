@@ -5,11 +5,11 @@ import BodySection from './BodySection';
 import { StyleSheetTestUtils } from "aphrodite";
 
 describe('Test BodySection.js', () => {
-    beforeEach(() => {
+    beforeAll(() => {
         StyleSheetTestUtils.suppressStyleInjection();
     });
 
-    afterEach(() => {
+    afterAll(() => {
         StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
     });
 

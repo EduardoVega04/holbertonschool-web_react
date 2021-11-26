@@ -6,11 +6,11 @@ import BodySectionWithMarginBottom from './BodySectionWithMarginBottom';
 import { StyleSheetTestUtils } from "aphrodite";
 
 describe('Test BodySectionWithMarginBottom.js', () => {
-    beforeEach(() => {
+    beforeAll(() => {
         StyleSheetTestUtils.suppressStyleInjection();
     });
 
-    afterEach(() => {
+    afterAll(() => {
         StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
     });
 

@@ -5,11 +5,11 @@ import Login from "./Login";
 import { StyleSheetTestUtils } from "aphrodite";
 
 describe('<Login />', () => {
-    beforeEach(() => {
+    beforeAll(() => {
         StyleSheetTestUtils.suppressStyleInjection();
     });
 
-    afterEach(() => {
+    afterAll(() => {
         StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
     });
 
