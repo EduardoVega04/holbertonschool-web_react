@@ -101,4 +101,5 @@ const style = StyleSheet.create({
     padding: '1rem 0'
   }
 });
+
 export default App;

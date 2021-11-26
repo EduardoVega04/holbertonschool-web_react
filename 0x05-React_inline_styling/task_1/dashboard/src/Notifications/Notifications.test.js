@@ -26,11 +26,11 @@ describe('<Notifications />', () => {
         { id: 2, type: 'urgent', value: 'New resume available' },
     ];
 
-    beforeAll(() => {
+    beforeEach(() => {
         StyleSheetTestUtils.suppressStyleInjection();
     });
 
-    afterAll(() => {
+    afterEach(() => {
         StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
     });
 

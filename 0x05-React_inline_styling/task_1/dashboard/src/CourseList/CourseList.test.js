@@ -12,11 +12,11 @@ describe('<CourseList />', () => {
         { id: 3, name: 'React', credit: 40 }
     ];
 
-    beforeAll(() => {
+    beforeEach(() => {
         StyleSheetTestUtils.suppressStyleInjection();
     });
 
-    afterAll(() => {
+    afterEach(() => {
         StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
     });
 

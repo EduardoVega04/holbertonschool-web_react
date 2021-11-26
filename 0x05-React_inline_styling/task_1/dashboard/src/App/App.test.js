@@ -11,11 +11,11 @@ import CourseList from '../CourseList/CourseList';
 import { StyleSheetTestUtils } from "aphrodite";
 
 describe('<App />', () => {
-    beforeAll(() => {
+    beforeEach(() => {
         StyleSheetTestUtils.suppressStyleInjection();
     });
 
-    afterAll(() => {
+    afterEach(() => {
         StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
     });
 

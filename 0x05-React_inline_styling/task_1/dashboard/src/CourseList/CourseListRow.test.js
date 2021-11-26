@@ -5,11 +5,11 @@ import React from 'react';
 import { StyleSheetTestUtils } from "aphrodite";
 
 describe('<CourseListRow />', () => {
-    beforeAll(() => {
+    beforeEach(() => {
         StyleSheetTestUtils.suppressStyleInjection();
     });
 
-    afterAll(() => {
+    afterEach(() => {
         StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
     });
 
