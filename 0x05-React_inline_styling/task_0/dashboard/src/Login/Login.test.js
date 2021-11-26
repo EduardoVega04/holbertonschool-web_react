@@ -1,21 +1,25 @@
-import { shallow } from 'enzyme';
-import '@testing-library/jest-dom';
 import React from 'react';
-import Login from "./Login";
+import { shallow } from 'enzyme';
+import { expect } from 'chai';
+import App from '../App/App';
+import Login from './Login'
 
-describe('<Login />', () => {
-    it('Renders without crashing', () => {
-        const wrapper = shallow(<Login />);
-        expect(wrapper.exists()).toEqual(true);
-    });
+describe('Test Login.js', () => {
+  it('Login without crashing', (done) => {
+    expect(shallow(<Login />).exists());
+    done();
+  });
 
-    it('Renders two input tags properly', () => {
-        const wrapper = shallow(<Login />);
-        expect(wrapper.find('input').length).toEqual(2);
-    });
+  it('div with the class App-body', (done) => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.contains(<body className='App-body' />))
+    done();
+  });
 
-    it('Renders two label tags properly', () => {
-        const wrapper = shallow(<Login />);
-        expect(wrapper.find('label').length).toEqual(2);
-    });
+  it('renders 2 inputs and 2 labels', (done) => {
+    const wrapper = shallow(<Login />);
+    expect(wrapper.find('input')).to.have.lengthOf(2);
+    expect(wrapper.find('label')).to.have.lengthOf(2);
+    done();
+  });
 });

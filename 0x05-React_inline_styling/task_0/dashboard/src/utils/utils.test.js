@@ -1,28 +1,20 @@
-// npm run test
-import { getFullYear, getFooterCopy, getLatestNotification } from "./utils";
+import React from 'react';
+import { getLatestNotification, getFullYear, getFooterCopy } from './utils';
 
-describe('getFullYear()', () => {
-    it('Returns the current year as a number', () => {
-        expect(getFullYear()).toBe(2021);
-    });
-});
+describe('Test Utils.js', () => {
+  it('Function getFullYear', (done) => {
+    expect(getFullYear()).toBe(new Date().getFullYear());
+    done();
+  });
 
-describe('getFooterCopy()', () => {
-    it('Get correct string according parameter (true)', () => {
-        expect(getFooterCopy(true)).toBe("Holberton School");
-    });
-});
+  it('Function getFooterCopy', (done) => {
+    expect(getFooterCopy(true)).toBe('Holberton School');
+    expect(getFooterCopy(false)).toBe('Holberton School main dashboard');
+    done();
+  });
 
-describe('getFooterCopy()', () => {
-    it('Get correct string according parameter (false)', () => {
-        expect(getFooterCopy(false)).toBe("Holberton School main dashboard");
-    });
-});
-
-describe('getLatestNotification()', () => {
-    it('Check returned string', () => {
-        expect(getLatestNotification().__html).toBe(
-            '<strong>Urgent requirement</strong> - complete by EOD'
-        );
-    });
+  it('Function getLatestNotification', (done) => {
+    expect(getLatestNotification()).toBe('<strong>Urgent requirement</strong> - complete by EOD');
+    done();
+  });
 });

@@ -1,43 +1,36 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; // ES6
+import './CourseList.css';
 
+function CourseListRow({ isHeader, textFirstCell, textSecondCell }) {
+  let trContent = '';
+  let bodyStyle = { backgroundColor: '#f5f5f5ab' };
+  let headerStyle = { backgroundColor: '#deb5b545' };
+  const style = isHeader ? headerStyle : bodyStyle;
 
-export default function CourseListRow({ isHeader, textFirstCell, textSecondCell }) {
-    const rowStyle = { backgroundColor: '#f5f5f5ab' };
-    const headerRowStyle = { backgroundColor: '#deb5b545' };
-
-    if (isHeader) {
-        if (textSecondCell === null)
-            return <tr style={headerRowStyle}><th colSpan="2">{textFirstCell}</th></tr>;
-        else {
-            return (
-                <tr style={headerRowStyle}>
-                    <th>{textFirstCell}</th>
-                    <th>{textSecondCell}</th>
-                </tr>
-            )
-        }
+  if (isHeader) {
+    if (textSecondCell === null) {
+      trContent = (<th colSpan='2'>{textFirstCell}</th>);
     }
     else {
-        return (
-            <tr style={rowStyle}>
-                <td>{textFirstCell}</td>
-                <td>{textSecondCell}</td>
-            </tr>
-        )
+      trContent = (<React.Fragment><th>{textFirstCell}</th><th>{textSecondCell}</th></React.Fragment>);
     }
+  } else {
+    trContent = (<React.Fragment><td>{textFirstCell}</td><td>{textSecondCell}</td></React.Fragment>);
+  }
+
+  return (<tr style={style}>{trContent}</tr>);
 }
 
 CourseListRow.propTypes = {
-    isHeader: PropTypes.bool,
-    textFirstCell: PropTypes.string.isRequired,
-    textSecondCell: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number
-    ])
-}
+  isHeader: PropTypes.bool,
+  textFirstCell: PropTypes.string.isRequired,
+  textSecondCell: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+};
 
 CourseListRow.defaultProps = {
-    isHeader: false,
-    textSecondCell: null
-}
+  isHeader: false,
+  textSecondCell: null
+};
+
+export default CourseListRow;

@@ -1,21 +1,25 @@
-import Header from "./Header";
-import { shallow } from 'enzyme';
-import '@testing-library/jest-dom';
 import React from 'react';
+import { shallow } from 'enzyme';
+import { expect } from 'chai';
+import App from '../App/App';
+import Header from './Header'
 
-describe('<Header />', () => {
-    it('Renders without crashing', () => {
-        const wrapper = shallow(<Header />);
-        expect(wrapper.exists()).toEqual(true);
-    });
+describe('Test Header.js', () => {
+  it('Header without crashing', (done) => {
+    expect(shallow(<Header />).exists());
+    done();
+  });
 
-    it('Renders img tag properly', () => {
-        const wrapper = shallow(<Header />);
-        expect(wrapper.find('img[alt="Holberton logo"]').exists()).toEqual(true);
-    });
+  it('div with the class App-header', (done) => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.contains(<header className='App-header' />))
+    done()
+  });
 
-    it('Renders h1 tag properly', () => {
-        const wrapper = shallow(<Header />);
-        expect(wrapper.find('h1').exists()).toEqual(true);
-    });
+  it('renders 1 img and 1 h1', (done) => {
+    const wrapper = shallow(<Header />);
+    expect(wrapper.find('img')).to.have.lengthOf(1);
+    expect(wrapper.find('h1')).to.have.lengthOf(1);
+    done();
+  });
 });

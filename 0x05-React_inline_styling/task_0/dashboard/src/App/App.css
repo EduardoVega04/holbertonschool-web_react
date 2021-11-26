@@ -1,26 +1,10 @@
 :root {
-  --hbt-color: #dd3e66;
+  --color-white: #fff;
+  --color-hb: #e1354b;
 }
 
-/* Reset possible default body styling by browsers */
-html, body {
-  margin: 0px;
-  border: 0px;
-  padding: 0px;
+.App-body {
+  background-color: var(--color-white);
+  padding: 4rem;
+  min-height: 26rem;
 }
-
-html, body, #root, .App {
-  height: 100%;
-}
-
-#root {
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-.App {
-  display: flex;
-  flex-flow: column nowrap;
-  margin-top: 20px;
-}
-
