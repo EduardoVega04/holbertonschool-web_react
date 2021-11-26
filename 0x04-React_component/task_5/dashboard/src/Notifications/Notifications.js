@@ -12,7 +12,7 @@ const buttonStyle = {
     margin: '0px 0px auto auto',
 };
 
-export default class Notifications extends React.PureComponent {
+export default class Notifications extends React.Component {
     constructor(props) {
         super(props)
 
