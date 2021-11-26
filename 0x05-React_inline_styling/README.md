@@ -1,0 +1,1 @@
+<strong>Inline styling<strong>
