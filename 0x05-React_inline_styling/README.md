@@ -26,5 +26,5 @@ _Developed by_
 
 **Eduardo Vega** :computer: :man: 
 
-- Github - [ymcastellar](https://github.com/EduardoVega04)
-- LinkedIn - [yoyman-castellar](https://www.linkedin.com/in/eduardo-andr%C3%A9s-vega/)
+- Github - [EduardoVega04](https://github.com/EduardoVega04)
+- LinkedIn - [Eduardo Vega](https://www.linkedin.com/in/eduardo-andr%C3%A9s-vega/)
