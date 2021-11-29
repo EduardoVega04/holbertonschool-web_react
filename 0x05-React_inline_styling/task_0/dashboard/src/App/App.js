@@ -54,7 +54,7 @@ class App extends React.Component {
                 <Login></Login>
               </BodySectionWithMarginBottom>}
             <BodySection title='News from the School'>
-              <p>Some news</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In malesuada tortor efficitur suscipit faucibus. Sed risus ex, mattis ac facilisis ut, sagittis quis lectus. Vestibulum ac eros lectus. In venenatis risus urna. Suspendisse sit amet magna a nulla vehicula tempor. Cras eget vehicula nunc. Nam faucibus id mi ut accumsan. Vestibulum sit amet interdum odio. Nullam sapien dui, tristique ac congue eu, tincidunt sed lorem. Phasellus vulputate dolor sit amet justo tincidunt, in mollis urna consequat. Suspendisse lacus sapien, consequat et mattis non, accumsan et risus.</p>
             </BodySection>
           </div>
           <Footer></Footer>
