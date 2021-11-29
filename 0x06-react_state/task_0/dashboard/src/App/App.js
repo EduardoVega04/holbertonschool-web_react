@@ -4,7 +4,7 @@ import Header from '../Header/Header';
 import Login from '../Login/Login';
 import CourseList from '../CourseList/CourseList';
 import Footer from '../Footer/Footer';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; // ES6
 import { getLatestNotification } from '../utils/utils';
 import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBottom';
 import BodySection from '../BodySection/BodySection';
@@ -26,18 +26,11 @@ const listNotifications = [
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { displayDrawer: false };
     this.handleClick = this.handleClick.bind(this);
-    this.handleHideDrawer = this.handleHideDrawer.bind(this);
-    this.handleDisplayDrawer = this.handleDisplayDrawer.bind(this);
   }
 
   componentDidMount() {
     document.addEventListener("keydown", this.handleClick);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener("keydown", this.handleClick);
   }
 
   handleClick(event) {
@@ -47,38 +40,22 @@ class App extends React.Component {
     }
   }
 
-  handleDisplayDrawer() {
-    this.setState({ displayDrawer: true });
-  }
-
-  handleHideDrawer() {
-    this.setState({ displayDrawer: false });
-  }
-
   render() {
-    const { isLoggedIn } = this.props;
-    const { displayDrawer } = this.state;
     return (
       <React.Fragment>
-        <Notifications
-          listNotifications={listNotifications}
-          displayDrawer={displayDrawer}
-          handleDisplayDrawer={this.handleDisplayDrawer}
-          handleHideDrawer={this.handleHideDrawer}
-        />
+        <Notifications listNotifications={listNotifications}></Notifications>
         <div className='App'>
-          <Header />
+          <Header></Header>
           <div className={css(style.appBody)}>
-            {isLoggedIn ?
+            {this.props.isLoggedIn ? 
               <BodySectionWithMarginBottom title='Course list'>
-                <CourseList listCourses={listCourses} />
-              </BodySectionWithMarginBottom> :
+                <CourseList listCourses={listCourses} ></CourseList>
+              </BodySectionWithMarginBottom> : 
               <BodySectionWithMarginBottom title='Log in to continue'>
-                <Login />
-              </BodySectionWithMarginBottom>
-            }
+                <Login></Login>
+              </BodySectionWithMarginBottom>}
             <BodySection title='News from the School'>
-              <p>Some news</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In malesuada tortor efficitur suscipit faucibus. Sed risus ex, mattis ac facilisis ut, sagittis quis lectus. Vestibulum ac eros lectus. In venenatis risus urna. Suspendisse sit amet magna a nulla vehicula tempor. Cras eget vehicula nunc. Nam faucibus id mi ut accumsan. Vestibulum sit amet interdum odio. Nullam sapien dui, tristique ac congue eu, tincidunt sed lorem. Phasellus vulputate dolor sit amet justo tincidunt, in mollis urna consequat. Suspendisse lacus sapien, consequat et mattis non, accumsan et risus.</p>
             </BodySection>
           </div>
           <div className={css(style.appFooter)}>
@@ -97,7 +74,7 @@ App.propTypes = {
 
 App.defaultProps = {
   isLoggedIn: false,
-  logOut: () => void (0)
+  logOut: () => void(0)
 };
 
 const style = StyleSheet.create({

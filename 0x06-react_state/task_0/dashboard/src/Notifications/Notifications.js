@@ -22,36 +22,24 @@ const imgStyle = {
 
 class Notifications extends React.Component {
   shouldComponentUpdate(nextProps) {
-    const { listNotifications, displayDrawer } = this.props;
     // returns true render will be invoked
-    return (
-      listNotifications.length < nextProps.listNotifications.length ||
-      nextProps.displayDrawer !== displayDrawer
-    );
+    if (this.props.listNotifications.length < nextProps.listNotifications.length) return true
+    return false;
   }
 
   render() {
-    const {
-      displayDrawer,
-      listNotifications,
-      handleDisplayDrawer,
-      handleHideDrawer,
-    } = this.props;
     return (
       <div className={css(style.notificationContainer, style.mediumNotificationContainer)}>
-        <div className={css(style.menuItem, displayDrawer ? style.hideElement : '')}
-          id="menuItem"
-          onClick={handleDisplayDrawer}
-        >Your notifications</div>
-        {displayDrawer ?
+        <div className={css(style.menuItem, this.props.displayDrawer ? style.hideElement: '')} id="menuItem">Your notifications</div>
+        { this.props.displayDrawer ?
           (<div className={css(style.notifications, style.mediumNotification)} id="notifications">
-            <button style={btnStyle} aria-label='Close' onClick={handleHideDrawer} id="closeNotifications">
-              <img src={close_icon} alt='Close' style={imgStyle} />
+            <button style={btnStyle} aria-label='Close' onClick={() => console.log('Close button has been clicked')}>
+              <img src={close_icon} style={imgStyle}/>
             </button>
             <p>Here is the list of notifications</p>
             <ul className={css(style.mediumUl)}>
-              {listNotifications.length === 0 ? (<NotificationItem id={0} value="No new notification for now" type='no-new' markAsRead={this.markAsRead} />) : <></>}
-              {listNotifications.map((list) => (<NotificationItem id={list.id} key={list.id} type={list.type} value={list.value} html={list.html} markAsRead={this.markAsRead} />))}
+              {this.props.listNotifications.length === 0 ? (<NotificationItem id={0} value="No new notification for now" type='no-new' markAsRead={this.markAsRead} />) : <></>}
+              {this.props.listNotifications.map((list) => (<NotificationItem id={list.id} key={list.id} type={list.type} value={list.value} html={list.html} markAsRead={this.markAsRead} />))}
             </ul>
           </div>)
           : <></>
@@ -59,7 +47,7 @@ class Notifications extends React.Component {
       </div>
     );
   }
-
+  
   markAsRead(id) {
     console.log(`Notification ${id} has been marked as read`)
   }
@@ -67,16 +55,12 @@ class Notifications extends React.Component {
 
 Notifications.propTypes = {
   displayDrawer: PropTypes.bool,
-  listNotifications: PropTypes.arrayOf(NotificationItemShape),
-  handleDisplayDrawer: PropTypes.func,
-  handleHideDrawer: PropTypes.func,
+  listNotifications: PropTypes.arrayOf(NotificationItemShape)
 };
 
 Notifications.defaultProps = {
   displayDrawer: false,
-  listNotifications: [],
-  handleDisplayDrawer: () => { },
-  handleHideDrawer: () => { },
+  listNotifications: []
 };
 
 const opacityKeyframes = {
@@ -85,23 +69,23 @@ const opacityKeyframes = {
   },
 
   'to': {
-    opacity: 1,
+      opacity: 1,
   }
 };
 
 const translateKeyframes = {
   '0%': {
-    transform: 'translateY(0)',
+      transform: 'translateY(0)',
   },
 
   '50%': {
-    transform: 'translateY(-5px)',
+      transform: 'translateY(-5px)',
   },
   '75%': {
     transform: 'translateY(5px)',
   },
   '100%': {
-    transform: 'translateY(0)',
+      transform: 'translateY(0)',
   },
 };
 
